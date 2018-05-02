@@ -1,11 +1,16 @@
-export function artworkReducer(state = {allArtworks: [], artworkSearch: []}, action){
+const defaultState = {
+  loading: false,
+  submitted: false,
+  allArtworks: [],
+  artworkSearch: []
+}
+
+export default function rootReducer(state = defaultState, action){
   switch(action.type){
-    case 'LOADING_ARTWORKS':
-      return {...state, loading: !state.loading }
     case 'FETCH_ALL_ARTWORKS':
       return {...state, loading: true, allArtworks: action.payload}
     case 'FETCH_ARTWORK_SEARCH':
-      return {...state, loading: true, artworkSearch: action.payload }
+      return {...state, submitted: true, artworkSearch: action.payload}
     default:
       return state;
   }

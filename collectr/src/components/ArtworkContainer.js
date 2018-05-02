@@ -6,9 +6,9 @@ import ArtworkList from './ArtworkList.js'
 
 class ArtworkContainer extends React.Component {
 
-  // componentDidMount() {
-  //   this.props.getAllArtworks()
-  // }
+  componentDidMount() {
+    this.props.getAllArtworks()
+  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -17,7 +17,7 @@ class ArtworkContainer extends React.Component {
   }
 
   render(){
-    console.log(this.props.artworkData)
+    // console.log(this.props)
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -33,14 +33,14 @@ class ArtworkContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    // allArtworks: state.allArtworks,
+    allArtworks: state.allArtworks,
     artworkData: state.artworkSearch
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    // getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch),
+    getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch),
     getArtworkSearch: bindActionCreators(fetchArtworkSearch, dispatch)
   }
 }

@@ -1,12 +1,14 @@
 import React from 'react';
+import { Card } from 'semantic-ui-react'
 
 const ArtworkCard = props => {
 
   return (
     <div>
-      debugger
-      <img src={props.img} alt='' />
-    </div>
+      console.log(props)
+
+
+      YO</div>
   )
 
 
