@@ -3,7 +3,7 @@ import { connect }  from 'react-redux';
 import { fetchArtworkSearch, fetchAllArtworks } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
 import ArtworkList from '../artworks/ArtworkList.js'
-// import NavBar from './NavBar.js'
+import NavBar from '../../components/NavBar.js'
 
 class MoodBoardsContainer extends React.Component {
   //
@@ -21,7 +21,7 @@ class MoodBoardsContainer extends React.Component {
     return (
       <div className="MoodBoards">
         MOOOOOOD
-        {/* <NavBar /> */}
+        <NavBar />
         {/* <ArtworkList /> */}
       </div>
     )

@@ -2,8 +2,7 @@ import React from 'react';
 import { connect }  from 'react-redux';
 import { fetchArtworkSearch, fetchAllArtworks } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
-import ArtworkList from '../artworks/ArtworkList.js'
-// import NavBar from './NavBar.js'
+import NavBar from '../../components/NavBar.js'
 
 class CollectionsContainer extends React.Component {
   //
@@ -21,8 +20,7 @@ class CollectionsContainer extends React.Component {
     return (
       <div className="Collections">
         COLLECTR COLLECTR
-        {/* <NavBar /> */}
-        {/* <ArtworkList /> */}
+        <NavBar />
       </div>
     )
   }

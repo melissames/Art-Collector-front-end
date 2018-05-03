@@ -2,11 +2,11 @@ import React from 'react';
 import ArtworkCard from './ArtworkCard.js';
 import { connect } from 'react-redux'
 
-const ArtworksList = props => {
+class ArtworksList extends React.Component {
 
-  const mapAllArtworks = () => {
-      let artists = Object.keys(props.allArtworks)
-      let artworks = Object.values(props.allArtworks)
+  mapAllArtworks = () => {
+      let artists = Object.keys(this.props.allArtworks)
+      let artworks = Object.values(this.props.allArtworks)
 
       return artworks.map(artworkArray => <ArtworkCard
         key={artworks.indexOf(artworkArray)}
@@ -15,31 +15,19 @@ const ArtworksList = props => {
       />)
   }
 
-  const mapSubmittedArtworks = () => {
-      let artworks = Object.values(props.artworkData)[0]
-
-      // debugger
-
-      return artworks.map(artwork => <ArtworkCard
-        key={artwork.id}
-        artist={artwork.artist.name}
-        artwork={artwork}
-      />)
+  render(){
+    return(
+      <div>
+        {!this.props.submitted ? this.mapAllArtworks() : null}
+      </div>
+    )
   }
-
-  return(
-    <div>
-      {props.submitted ? mapSubmittedArtworks() : mapAllArtworks()}
-    </div>
-  )
 }
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading,
     submitted: state.submitted,
-    allArtworks: state.allArtworks,
-    artworkData: state.artworkSearch
+    allArtworks: state.allArtworks
   }
 }
 
