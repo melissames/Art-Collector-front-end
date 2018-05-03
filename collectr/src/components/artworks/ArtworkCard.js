@@ -5,22 +5,25 @@ import { connect } from 'react-redux'
 const ArtworkCard = props => {
 
   const mapAllArtworkCards = () => {
-    if(props.loading && !props.submitted){
-      // debugger
-      return props.artworks[0].map(artwork => <Card image={artwork.img} header={props.artist.name} />)
-    }
+    return props.artworks[0].map(artwork => <Card
+      key={artwork.id}
+      image={artwork.img}
+      header={artwork.artist.name} />)
   }
 
   const mapSubmittedArtworkCards = () => {
     if(props.submitted){
-      debugger
+      // debugger
+      <Card
+        key={props.artwork.id}
+        image={props.artwork.img}
+        header={props.artist} />
     }
   }
 
   return (
     <div>
-      {props.loading && !props.submitted ? mapAllArtworkCards() : null}
-      {props.submitted ? mapSubmittedArtworkCards() : null}
+      {props.submitted ? mapSubmittedArtworkCards() : mapAllArtworkCards()}
     </div>
   )
 }

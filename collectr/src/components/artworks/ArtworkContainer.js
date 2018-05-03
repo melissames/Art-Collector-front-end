@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect }  from 'react-redux';
-import { fetchArtworkSearch, fetchAllArtworks } from '../actions/index.js';
+import { fetchArtworkSearch, fetchAllArtworks } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
 import ArtworkList from './ArtworkList.js'
+import NavBar from '../../components/NavBar.js'
+// import { Button, Form } from 'semantic-ui-react'
 
 class ArtworkContainer extends React.Component {
 
@@ -18,7 +20,8 @@ class ArtworkContainer extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="Artwork">
+        <NavBar />
         <form onSubmit={this.handleSubmit}>
           <input type='text' name='name' />
           <input type='submit' />
@@ -27,7 +30,6 @@ class ArtworkContainer extends React.Component {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = state => {
@@ -45,10 +47,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtworkContainer);
-
-
-
-
-
-// to do: figure out how to fetch from backend from the same route to the same controller
-// render all artwork then do search bar

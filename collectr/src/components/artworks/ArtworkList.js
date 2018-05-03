@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 const ArtworksList = props => {
 
   const mapAllArtworks = () => {
-    if(props.loading && !props.submitted){
       let artists = Object.keys(props.allArtworks)
       let artworks = Object.values(props.allArtworks)
 
@@ -14,25 +13,23 @@ const ArtworksList = props => {
         artist={artists[artworks.indexOf(artworkArray)]}
         artworks={artworkArray}
       />)
-      }
   }
 
-  // const mapSubmittedArtworks = () => {
-  //   if(props.submitted){
-  //     submittedArtistData = Object.values(props.artworkData)[0]
-  //
-  //     <ArtworkCard
-  //       key={submittedArtistData.id}
-  //       artist={submittedArtistData.artist.name}
-  //       artwork={submittedArtistData.img}
-  //     />
-  //   }
-  // }
+  const mapSubmittedArtworks = () => {
+      let artworks = Object.values(props.artworkData)[0]
+
+      // debugger
+
+      return artworks.map(artwork => <ArtworkCard
+        key={artwork.id}
+        artist={artwork.artist.name}
+        artwork={artwork}
+      />)
+  }
 
   return(
     <div>
-      {props.loading && !props.submitted ? mapAllArtworks() : null}
-      {/* {props.loading && props.submitted ? mapSubmittedArtworks() : null} */}
+      {props.submitted ? mapSubmittedArtworks() : mapAllArtworks()}
     </div>
   )
 }
