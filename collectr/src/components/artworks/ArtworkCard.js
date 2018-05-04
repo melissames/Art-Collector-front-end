@@ -1,35 +1,41 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react'
 import { connect } from 'react-redux'
+// import ArtworkCollectionButton from './ArtworkCollectionButton.js'
 
-const ArtworkCard = props => {
+class ArtworkCard extends React.Component {
 
-  // const mapAllArtists = () => {
-  //   // return props.artist
-  //   if(props.loading){
-  //
-  //     debugger
-  //   }
-  //
-  //   // return props.artworks[0].map(artwork => <Card
-  //   //   key={artwork.id}
-  //   //   image={artwork.img} />)
-  // }
+  handleClick = (id) => {
+    console.log(id)
+  }
 
-  return (
-    <div>
-      {<Card
-          key={props.id}
-          image={props.img} />}
-    </div>
-  )
+  render(){
+    // console.log(this.props.id)
+    return (
+      <div>
+        {<Card
+            key={this.props.key}
+            id={this.props.id}
+            image={this.props.img} />}
+        <button onClick={() => this.handleClick(this.props.id)}>Add to Collection</button>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading,
-    submitted: state.submitted
+    // loading: state.loading,
+    // submitted: state.submitted
   }
 }
 
-export default connect(mapStateToProps)(ArtworkCard);
+const mapDispatchToProps = dispatch => {
+  return {
+
+    // getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch),
+    // getArtworkSearch: bindActionCreators(fetchArtworkSearch, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArtworkCard);

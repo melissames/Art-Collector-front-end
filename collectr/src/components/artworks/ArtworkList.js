@@ -7,7 +7,8 @@ import { connect } from 'react-redux'
 class ArtworkList extends React.Component {
 
   createArtworkCards = () => {
-    return this.props.artworks.map(artwork => <ArtworkCard key={artwork.id} name={artwork.name} img={artwork.img} />)
+
+    return this.props.artworks.map(artwork => <ArtworkCard key={artwork.id} id={artwork.id} name={artwork.name} img={artwork.img} />)
   }
 
   render(){

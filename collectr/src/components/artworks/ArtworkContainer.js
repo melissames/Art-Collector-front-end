@@ -23,7 +23,7 @@ class ArtworkContainer extends React.Component {
       <div className="Artwork">
         <NavBar />
         <form onSubmit={this.handleSubmit}>
-          <input type='text' name='name' />
+          <input type='text' name='name' placeholder='search artists' />
           <input type='submit' />
         </form>
 
