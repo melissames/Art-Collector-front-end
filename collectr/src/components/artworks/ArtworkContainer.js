@@ -2,10 +2,9 @@ import React from 'react';
 import { connect }  from 'react-redux';
 import { fetchArtworkSearch, fetchAllArtworks } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
-import ArtworkList from './ArtworkList.js'
+import ArtworkData from './ArtworkData.js'
 import ArtworkSearch from './ArtworkSearch'
 import NavBar from '../../components/NavBar.js'
-// import { Button, Form } from 'semantic-ui-react'
 
 class ArtworkContainer extends React.Component {
 
@@ -27,7 +26,8 @@ class ArtworkContainer extends React.Component {
           <input type='text' name='name' />
           <input type='submit' />
         </form>
-        {this.props.submitted ? <ArtworkSearch /> : <ArtworkList />}
+
+        {this.props.loading ? (this.props.submitted ? <ArtworkSearch /> : <ArtworkData />) : null}
       </div>
     )
   }
@@ -37,7 +37,8 @@ const mapStateToProps = state => {
   return {
     allArtworks: state.allArtworks,
     artworkData: state.artworkSearch,
-    submitted: state.submitted
+    submitted: state.submitted,
+    loading: state.loading
   }
 }
 

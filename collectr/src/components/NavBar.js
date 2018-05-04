@@ -1,11 +1,4 @@
-import React, { Component } from 'react';
-import { connect }  from 'react-redux';
-// import * as actions from "../actions/index";
-import { Link } from 'react-router-dom';
-// import { Container, Image, Menu, Button, Label } from 'semantic-ui-react';
-import ArtworkContainer from './artworks/ArtworkContainer.js'
-import CollectionContainer from './collections/CollectionContainer.js'
-import MoodBoardContainer from './moodboards/MoodBoardContainer.js'
+import React from 'react';
 
 class NavBar extends React.Component {
 

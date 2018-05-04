@@ -6,8 +6,6 @@ class ArtworkSearch extends React.Component {
 
   mapSearchedArtworks = () => {
     let artworks = Object.values(this.props.artworkData)[0]
-    // debugger
-
 
       return artworks.map(artwork => <ArtworkSearchCard
         key={artwork.id}

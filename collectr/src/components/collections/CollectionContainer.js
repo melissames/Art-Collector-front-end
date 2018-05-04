@@ -19,8 +19,8 @@ class CollectionsContainer extends React.Component {
   render(){
     return (
       <div className="Collections">
-        COLLECTR COLLECTR
         <NavBar />
+        COLLECTR COLLECTR
       </div>
     )
   }

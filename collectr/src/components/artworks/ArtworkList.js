@@ -2,23 +2,19 @@ import React from 'react';
 import ArtworkCard from './ArtworkCard.js';
 import { connect } from 'react-redux'
 
-class ArtworksList extends React.Component {
 
-  mapAllArtworks = () => {
-      let artists = Object.keys(this.props.allArtworks)
-      let artworks = Object.values(this.props.allArtworks)
 
-      return artworks.map(artworkArray => <ArtworkCard
-        key={artworks.indexOf(artworkArray)}
-        artist={artists[artworks.indexOf(artworkArray)]}
-        artworks={artworkArray}
-      />)
+class ArtworkList extends React.Component {
+
+  createArtworkCards = () => {
+    return this.props.artworks.map(artwork => <ArtworkCard key={artwork.id} name={artwork.name} img={artwork.img} />)
   }
 
   render(){
     return(
       <div>
-        {!this.props.submitted ? this.mapAllArtworks() : null}
+        {this.props.artworks.length ? this.props.artworks[0].name : null}
+        {!this.props.submitted ? this.createArtworkCards() : null}
       </div>
     )
   }
@@ -26,9 +22,8 @@ class ArtworksList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    submitted: state.submitted,
-    allArtworks: state.allArtworks
+    submitted: state.submitted
   }
 }
 
-export default connect(mapStateToProps)(ArtworksList);
+export default connect(mapStateToProps)(ArtworkList);
