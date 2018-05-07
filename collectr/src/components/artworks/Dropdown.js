@@ -1,32 +1,33 @@
 import React from 'react';
+import { Card } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import Dropdown from 'react-dropdown'
-import 'react-dropdown/style.css'
+// import AddPhotoToCollectionDropdown from './AddPhotoToCollectionDropdown'
 
 class ArtworkCard extends React.Component {
 
   handleClick = (id) => {
     console.log(id)
   }
+  // make the button a drop down so someone can choose which collection to add it to
 
   render(){
+    // console.log(this.props.id)
     return (
-      <div className="btn-img">
-        <div className="img-wrap">
-          <img id={this.props.id}
-            className='img'
-            src={this.props.img} />
-          <button onClick={() => this.handleClick(this.props.id)}>Add to Collection</button>
-        </div>
+      <div>
+        {<Card
+            key={this.props.key}
+            id={this.props.id}
+            image={this.props.img} />}
+        {/* <button onClick={() => this.handleClick(this.props.id)}>Add to Collection</button> */}
+        <AddPhotoToCollectionDropdown />
       </div>
     )
   }
 }
 
-// dropdown 
-
 const mapStateToProps = state => {
   return {
+    saveArtworkCollection: state.saveArtworkCollection
     // loading: state.loading,
     // submitted: state.submitted
   }

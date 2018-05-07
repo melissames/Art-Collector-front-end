@@ -6,7 +6,6 @@ import ArtworkContainer from './components/artworks/ArtworkContainer'
 import CollectionContainer from './components/collections/CollectionContainer'
 import MoodBoardContainer from './components/moodboards/MoodBoardContainer'
 
-
 class App extends Component {
   render() {
     return (

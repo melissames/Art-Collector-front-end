@@ -1,6 +1,6 @@
 import React from 'react';
 import ArtworkList from './ArtworkList.js';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 
 
@@ -14,9 +14,9 @@ class ArtworkData extends React.Component {
 
   render(){
     return(
-      <div>
-        {!this.props.submitted ? this.unnestData() : null}
-      </div>
+        <div>
+          {!this.props.submitted ? this.unnestData() : null}
+        </div>
     )
   }
 }

@@ -19,6 +19,19 @@ export let fetchAllArtworks = () => {
   }
 }
 
+// export let addPhotoToCollection = (photoId, collectionId) = {
+//   return dispatch => {
+//     return fetch(`${URL}/artwork_collections`{
+//       method: 'POST',
+//       body: JSON.stringify({
+//         artwork_id: photoId,
+//         collection_id: collectionId
+//       })
+//       .then(res => res.json())
+//       .then(console.log('great success!!'))
+//     })
+//   }
+// }
 
 
 // collections
