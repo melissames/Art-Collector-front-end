@@ -2,16 +2,14 @@ import React from 'react';
 import { connect }  from 'react-redux';
 // import { fetchArtworkSearch, fetchAllArtworks } from '../../actions/index.js';
 // import { bindActionCreators } from 'redux'
-import NavBar from '../../components/NavBar.js'
-import MoodBoardPXL8 from './MoodBoardPXL8.js'
+// import NavBar from '../../components/NavBar.js'
 
-class MoodBoardsContainer extends React.Component {
+class MoodBoardsPXL8 extends React.Component {
 
   render(){
     return (
-      <div className="MoodBoards">
-        <NavBar />
-        <MoodBoardPXL8 />
+      <div>
+
 
       </div>
     )
@@ -32,4 +30,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MoodBoardsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(MoodBoardsPXL8);

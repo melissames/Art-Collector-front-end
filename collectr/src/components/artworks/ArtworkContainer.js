@@ -8,10 +8,6 @@ import NavBar from '../../components/NavBar.js'
 
 class ArtworkContainer extends React.Component {
 
-  componentDidMount() {
-    this.props.getAllArtworks()
-  }
-
   handleSubmit = event => {
     event.preventDefault();
 

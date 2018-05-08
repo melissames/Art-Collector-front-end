@@ -1,29 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import Dropdown from 'react-dropdown'
-import 'react-dropdown/style.css'
+import { fetchColorImage } from '../../actions/index.js';
+import { bindActionCreators } from 'redux'
+// import PXL8Image from './PXL8Image.js'
+import PXL8Dropdown from './PXL8Dropdown'
+// import Dropdown from 'react-dropdown'
+// import 'react-dropdown/style.css'
 
 class ArtworkCard extends React.Component {
 
-  handleClick = (id) => {
-    console.log(id)
+  handleClick = id => {
+    this.props.getColorImage(id)
+    // console.log(this.props)
+    // write method to colors backend in index & reducer
+      // call that method here
+    // make histogram function
+      // render new artwork
   }
 
   render(){
     return (
       <div className="btn-img">
         <div className="img-wrap">
-          <img id={this.props.id}
+          <img onClick={() => this.handleClick(this.props.id)}
+            id={this.props.id}
             className='img'
             src={this.props.img} />
-          <button onClick={() => this.handleClick(this.props.id)}>Add to Collection</button>
+          {/* <button onClick={() => this.handleClick(this.props.id)}>PXL8</button> */}
+          {/* <PXL8Dropdown artwork_id={this.props.id}/> */}
         </div>
       </div>
     )
   }
 }
 
-// dropdown 
+// dropdown
 
 const mapStateToProps = state => {
   return {
@@ -35,7 +46,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
 
-    // getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch),
+    getColorImage: bindActionCreators(fetchColorImage, dispatch)
     // getArtworkSearch: bindActionCreators(fetchArtworkSearch, dispatch)
   }
 }

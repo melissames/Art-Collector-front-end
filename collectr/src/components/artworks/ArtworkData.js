@@ -8,7 +8,7 @@ class ArtworkData extends React.Component {
 
   unnestData = () => {
     let artGrid = this.props.allArtworks
-
+    // debugger
     return artGrid.map(artworkArray => <ArtworkList key={artGrid.indexOf(artworkArray)} artworks={artworkArray} />)
   }
 

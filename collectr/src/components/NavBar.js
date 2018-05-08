@@ -9,9 +9,9 @@ class NavBar extends React.Component {
       <header>
         <div className="nav">
           <ul>
-            <li className="Artwork"><a href="/artwork" >Artwork</a></li>
-            <li className="Collection"><a href="/collection" >Collection</a></li>
-            <li className="MoodBoard"><a href="/moodboard" >MoodBoard</a></li>
+            <li className="Artwork"><a href="/artworks" >Artwork</a></li>
+            <li className="Collection"><a href="/collections" >Collection</a></li>
+            <li className="PXL8"><a href="/pxl8" >PXL8</a></li>
           </ul>
         </div>
       </header>

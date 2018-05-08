@@ -2,11 +2,20 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import { Route } from 'react-router-dom';
+import { connect }  from 'react-redux';
+import { bindActionCreators } from 'redux'
+import { fetchCollections, fetchAllArtworks } from './actions/index.js';
 import ArtworkContainer from './components/artworks/ArtworkContainer'
 import CollectionContainer from './components/collections/CollectionContainer'
 import MoodBoardContainer from './components/moodboards/MoodBoardContainer'
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.getAllCollections()
+    this.props.getAllArtworks()
+  }
+
   render() {
     return (
       <div className="App">
@@ -14,9 +23,9 @@ class App extends Component {
           <header>
             <div className="nav">
               <ul>
-                <Route exact path="/artwork" component={ArtworkContainer} />
-                <Route exact path="/collection" component={CollectionContainer} />
-                <Route exact path="/moodboard" component={MoodBoardContainer} />
+                <Route exact path="/artworks" component={ArtworkContainer} />
+                <Route exact path="/collections" component={CollectionContainer} />
+                <Route exact path="/pxl8" component={MoodBoardContainer} />
               </ul>
             </div>
           </header>
@@ -26,4 +35,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    getAllCollections: bindActionCreators(fetchCollections, dispatch),
+    getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch)
+    // getArtworkSearch: bindActionCreators(fetchArtworkSearch, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);

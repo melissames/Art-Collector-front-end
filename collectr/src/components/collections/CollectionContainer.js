@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect }  from 'react-redux';
+import { fetchCollections } from '../../actions/index.js';
+import { bindActionCreators } from 'redux'
 import NavBar from '../../components/NavBar.js'
 import CollectionForm from './CollectionForm.js'
+import CollectionList from './CollectionList.js'
 
 class CollectionsContainer extends React.Component {
 
@@ -10,6 +13,7 @@ class CollectionsContainer extends React.Component {
       <div className="Collections">
         <NavBar />
         <CollectionForm />
+        <CollectionList />
       </div>
     )
   }
@@ -17,15 +21,15 @@ class CollectionsContainer extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    // allArtworks: state.allArtworks,
-    collectionData: state.collectionSearch,
-    submitted: state.submitted
+    // allCollections: state.allArtworks,
+
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    // getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch),
+    getAllCollections: bindActionCreators(fetchCollections, dispatch)
+    // getAllArtworks: bindActionCreators(fetchAllArtworks, dispatch)
     // getArtworkSearch: bindActionCreators(fetchArtworkSearch, dispatch)
   }
 }

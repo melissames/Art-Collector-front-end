@@ -3,8 +3,8 @@ import { artworkReducer } from './artworkReducer'
 import { collectionReducer } from './collectionReducer'
 
 const rootReducer = combineReducers({
-  artworks: artworkReducer,
-  collections: collectionReducer
+  artwork: artworkReducer,
+  collection: collectionReducer
 })
 
 export default rootReducer;

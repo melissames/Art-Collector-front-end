@@ -1,15 +1,15 @@
 import React from 'react';
-import { createCollection } from '../../actions/index.js';
+// import { createCollection } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
-// import { Card } from 'semantic-ui-react'
+import { fetchCollections } from '../../actions/index.js';
 import { connect } from 'react-redux'
 
 const CollectionForm = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-
-    props.createCollection(event.target.name.value)
+    // debugger
+    props.getAllCollections(event.target.name.value)
   }
 
   return (
@@ -25,7 +25,7 @@ const CollectionForm = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createCollection: bindActionCreators(createCollection, dispatch)
+    getAllCollections: bindActionCreators(fetchCollections, dispatch)
   }
 }
 

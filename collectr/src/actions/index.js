@@ -19,6 +19,37 @@ export let fetchAllArtworks = () => {
   }
 }
 
+// colors
+
+export let fetchColorImage = id => {
+  return dispatch => {
+    return fetch(`${URL}/colors/?q=${id}`)
+      .then(res => res.json())
+      .then(json => console.log(json))
+  }
+}
+
+
+// collections
+
+export let fetchCollections = () => {
+  // debugger
+  return dispatch => {
+    return fetch(`${URL}/collections`)
+      .then(res => res.json())
+      // .then(json => console.log(json))
+      .then(json => dispatch({type: 'FETCH_ALL_COLLECTIONS', payload: json}))
+  }
+}
+
+// export let createCollections = (collectionName) => {
+//   return dispatch => {
+//     return fetch(`${URL}/collections/?q=${collectionName}`)
+//     .then(res => res.json())
+//     .then(json => dispatch({type: 'FETCH_ALL_COLLECTIONS', payload: json}))
+//   }
+// }
+
 // export let addPhotoToCollection = (photoId, collectionId) = {
 //   return dispatch => {
 //     return fetch(`${URL}/artwork_collections`{
@@ -33,13 +64,10 @@ export let fetchAllArtworks = () => {
 //   }
 // }
 
-
-// collections
-
-export let createCollection = (collectionName) => {
-  return dispatch => {
-    return fetch(`${URL}/collections/?q=${collectionName}`)
-    .then(res => res.json())
-    .then(json => console.log({type: 'FETCH_COLLECTION_SEARCH', payload: json}))
-  }
-}
+// export let fetchCollections = () => {
+//   return dispatch => {
+//     return fetch(`${URL}/collections`)
+//       .then(res => res.json())
+//       .then(json => console.log(json))
+//   }
+// }
