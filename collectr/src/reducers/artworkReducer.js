@@ -1,11 +1,14 @@
 const defaultState = {
   loading: false,
-  submitted: false,
-  collectionLoading: false,
-  colorLoading: false,
   allArtworks: [],
+
+  submitted: false,
   artworkSearch: [],
+
+  collectionLoading: false,
   allCollections: [],
+
+  colorLoading: false,
   colorImage: []
 }
 

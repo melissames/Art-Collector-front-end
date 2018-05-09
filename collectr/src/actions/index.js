@@ -25,6 +25,7 @@ export let fetchColorImage = id => {
   return dispatch => {
     return fetch(`${URL}/colors/?q=${id}`)
       .then(res => res.json())
+      .then(json => dispatch({type: 'FETCH_COLOR_IMAGE', payload: json}))
       .then(json => console.log(json))
   }
 }

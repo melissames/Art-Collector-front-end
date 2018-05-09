@@ -12,7 +12,7 @@ import MoodBoardContainer from './components/moodboards/MoodBoardContainer'
 class App extends Component {
 
   componentDidMount() {
-    this.props.getAllCollections()
+    // this.props.getAllCollections()
     this.props.getAllArtworks()
   }
 
