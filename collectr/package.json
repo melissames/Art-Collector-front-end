@@ -4,9 +4,12 @@
   "private": true,
   "dependencies": {
     "carousel": "0.0.3",
+    "chart.js": "^2.7.2",
     "react": "^16.3.2",
+    "react-chartjs-2": "^2.7.2",
     "react-dom": "^16.3.2",
     "react-dropdown": "^1.4.2",
+    "react-model-presenter": "^1.0.0-beta.18",
     "react-redirect": "^1.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
