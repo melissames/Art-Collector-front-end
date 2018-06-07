@@ -29,5 +29,5 @@ Enter an artist into the search bar to return a carousel of 10 artworks related 
 
 
 ### Credits
--[Artsy API](https://developers.artsy.net/docs/search)
--[Chart JS](https://www.npmjs.com/package/react-chartjs)
+- [Artsy API](https://developers.artsy.net/docs/search)
+- [Chart JS](https://www.npmjs.com/package/react-chartjs)
