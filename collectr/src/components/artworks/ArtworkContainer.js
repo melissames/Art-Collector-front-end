@@ -4,7 +4,7 @@ import { fetchArtworkSearch, fetchAllArtworks } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
 import ArtworkData from './ArtworkData.js'
 import ArtworkSearch from './ArtworkSearch'
-import NavBar from '../../components/NavBar.js'
+// import NavBar from '../../components/NavBar.js'
 
 class ArtworkContainer extends React.Component {
 
@@ -17,12 +17,11 @@ class ArtworkContainer extends React.Component {
   render(){
     return (
       <div className="Artwork">
-        <NavBar />
+        <br></br><br></br>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' name='name' placeholder='search artists' />
-          <input type='submit' />
+          <input type='text' name='name' placeholder='search artists' className='centered' />
         </form>
-
+        <br></br><br></br>
         {this.props.loading ? (this.props.submitted ? <ArtworkSearch /> : <ArtworkData />) : null}
       </div>
     )

@@ -8,6 +8,8 @@ import { fetchCollections, fetchAllArtworks } from './actions/index.js';
 import ArtworkContainer from './components/artworks/ArtworkContainer'
 import CollectionContainer from './components/collections/CollectionContainer'
 import MoodBoardContainer from './components/moodboards/MoodBoardContainer'
+import NavBar from './components/NavBar.js'
+import pixelPhoto from './photos/pxl8.png'
 
 class App extends Component {
 
@@ -19,17 +21,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="news">
+        {/* <div className="news"> */}
           <header>
-            <div className="nav">
+            {/* <div className="nav"> */}
+            {/* <NavBar /> */}
+            <img src={pixelPhoto} className='center' />
+
               <ul>
                 <Route exact path="/artworks" component={ArtworkContainer} />
-                <Route exact path="/collections" component={CollectionContainer} />
-                <Route exact path="/pxl8" component={MoodBoardContainer} />
+                {/* <Route exact path="/collections" component={CollectionContainer} />
+                <Route exact path="/pxl8" component={MoodBoardContainer} /> */}
               </ul>
-            </div>
+            {/* </div> */}
           </header>
-        </div>
+        {/* </div> */}
       </div>
     );
   }

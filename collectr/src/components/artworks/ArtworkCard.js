@@ -2,23 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { fetchColorImage } from '../../actions/index.js';
 import { bindActionCreators } from 'redux'
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 import ArtworkChart from './ArtworkChart.js'
-// import PXL8Image from './PXL8Image.js'
-import PXL8Dropdown from './PXL8Dropdown'
-// import Dropdown from 'react-dropdown'
-// import 'react-dropdown/style.css'
+// import PXL8Dropdown from './PXL8Dropdown'
 
-// const customStyles = {
-//   content : {
-//     top                   : '50%',
-//     left                  : '50%',
-//     right                 : 'auto',
-//     bottom                : 'auto',
-//     marginRight           : '-50%',
-//     transform             : 'translate(-50%, -50%)'
-//   }
-// };
 
 class ArtworkCard extends React.Component {
 
@@ -26,11 +13,14 @@ class ArtworkCard extends React.Component {
     clicked: false
   }
 
-
   handleClick = id => {
     this.props.getColorImage(id)
 
-    this.setState({clicked: true})
+    this.clickStateSwitch()
+  }
+
+  clickStateSwitch = () => {
+    this.setState({clicked: !this.state.clicked})
   }
 
   render(){
@@ -38,7 +28,7 @@ class ArtworkCard extends React.Component {
       <div className="btn-img">
         <div className="img-wrap">
           {this.state.clicked ?
-            <ArtworkChart id={this.props.id} img={this.props.img}/>
+            <ArtworkChart id={this.props.id} img={this.props.img} switch={this.clickStateSwitch}/>
             :
             <img onClick={() => this.handleClick(this.props.id)}
             id={this.props.id}
