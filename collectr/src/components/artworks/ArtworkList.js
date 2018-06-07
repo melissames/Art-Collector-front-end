@@ -20,11 +20,16 @@ class ArtworkList extends React.Component {
       slidesToScroll: 5
     };
     return(
-      <div>
+      <div className='artist'>
       {this.props.artworks.length ? this.props.artworks[0].name : null}
+      <div>
       <Slider {...settings}>
         {this.createArtworkCards()}
       </Slider>
+    </div>
+      <br></br>
+      <br></br>
+
     </div>
     )
   }

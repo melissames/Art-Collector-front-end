@@ -8,8 +8,9 @@ class ArtworkSearch extends React.Component {
 
   mapSearchedArtworks = () => {
     if(this.props.submitted){
-      return this.props.artworkData[0].map(artwork => <ArtworkCard key={artwork.id} id={artwork.id} img={artwork.img} />)
-
+      if(this.props.artworkData[0]){
+        return this.props.artworkData[0].map(artwork => <ArtworkCard key={artwork.id} id={artwork.id} img={artwork.img} />)
+      }
     }
   }
 
@@ -21,7 +22,7 @@ class ArtworkSearch extends React.Component {
       slidesToScroll: 5
     };
     return(
-      <div>
+      <div className='artist'>
         <Slider {...settings}>
           {this.mapSearchedArtworks()}
         </Slider>

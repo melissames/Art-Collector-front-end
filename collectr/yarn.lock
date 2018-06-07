@@ -5703,6 +5703,10 @@ react-model-presenter@^1.0.0-beta.18:
     object.getownpropertydescriptors "2.0.3"
     shallowequal "1.0.2"
 
+react-pixelify@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-pixelify/-/react-pixelify-0.1.1.tgz#c44b7c14ebf73444404de9dc6da905cc94a78e64"
+
 react-redirect@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-redirect/-/react-redirect-1.0.0.tgz#4679a3d4d3babbf9ae051794e2579cd71964cb3c"
